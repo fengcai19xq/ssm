@@ -1,0 +1,118 @@
+
+body{ background:#dfe3eb; font-family: "Microsoft Yahei";}
+
+.p_header{ width:100%; height:70px; background:#f86660;}
+.p_header .logo{ float:left; width:145px; height:40px; margin:15px 0; border-right:1px solid #fc8c88; background:url(../img/logo.png) no-repeat center;}
+.p_header h1{ float:left; height:40px; margin:15px 0; padding:0 0 0 18px; border-left:1px solid #da4a44; line-height:40px; font-size:24px; font-weight:normal; color:#fff;}
+.p_header .user{ float:left; height:40px; margin:15px 0; padding:0 0 0 50px; line-height:40px; font-size:14px; color:#fff;}
+.p_header .user i{ margin:0 10px 0 0; font-size:30px; vertical-align:-6px;}
+.p_header .link{ float:right; padding:25px 20px 0 0; font-size:14px; color:#fff;}
+.p_header .link a{ color:#fff;}
+.p_header .link span{ margin:0 10px;}
+.p_header .link i{ margin:0 6px 0 0;}
+
+.main{ position:relative; padding:0 0 0 160px;}
+
+.aside{ position:absolute; left:0; top:0; width:160px;}
+.aside ul{ padding:20px 0 0;}
+.aside li a{ display:block; height:48px; border:none; border-left:3px solid transparent; line-height:48px; font-size:14px; color:#333;}
+.aside li a i{ display:inline-block; width:50px; font-size:22px; color:#6b7587; text-indent:18px; vertical-align:-4px;}
+.aside li a:hover{ color:#f86660; text-decoration:none;}
+.aside li a:hover i{ color:#f86660;}
+.aside li a.active{ border-left:3px solid #f86660; background:#4e556a; color:#fff;}
+.aside li a.active i{ color:#fff;}
+
+.content{ padding:20px; background:#f2f2f2;}
+
+.content .tabbox{ padding:20px; border:1px solid #ddd; border-top:none; background:#fff;}
+.content .tabbox .total{ float:right;}
+.content .tabbox .total>span{ margin:0 0 0 30px;}
+.content .tabbox .file{ margin:0 0 20px; padding:15px; background:#f2f2f2;}
+
+.content .tabbox .more{ cursor:pointer;}
+.content .tabbox .more span{ position:relative; display:block;}
+.content .tabbox .more span i{ position:absolute; right:-6px; bottom:-8px; width:8px; height:8px; background:url(../img/arrow.png) no-repeat;}
+.content .tabbox .more_con{ display:none;}
+
+#more_table{ border-collapse:collapse;}
+
+.table > thead > tr > th.active{ background:#f86660; color:#fff;}
+
+
+
+
+
+.mr10{ margin-right:10px;}
+
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  line-height: 1.7;
+}
+.btn-primary{
+	border-color:#3078bf;
+}
+.btn-primary:hover {
+	background: #4898e7;
+	border-color:#4898e7;
+}
+a:hover, a:focus{
+	color:#4898e7;
+}
+.text-success{
+	color:#090;
+}
+.text-danger{
+	color:#c7181e;
+}
+.table{
+	color:#666;
+}
+.pagination{
+	margin:0;
+}
+.input-sm{
+	height:26px;
+}
+select.input-sm{
+	height:24px;
+	padding:0;
+}
+.form-inline label {
+    width: 60px;
+	font-weight:normal;
+	text-align:right;
+}
+.form-inline label input{
+	margin-right:4px;
+	vertical-align:-2px;
+}
+.form-inline select.form-control{
+	width:153px;
+	height:26px;
+}
+.form-inline .form-group{
+	padding:0 0 15px;
+}
+.form-inline .input-group > .form-control{
+	width:130px;
+	height:26px;
+}
+.input-group-sm > .input-group-addon{
+	height:26px;
+	padding:0 5px;
+}
+
+
+
+
+
+
+
+
+
+

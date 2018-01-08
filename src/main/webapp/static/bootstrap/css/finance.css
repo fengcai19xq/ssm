@@ -1,0 +1,93 @@
+
+.mr10{ margin-right:10px;}
+.mall_change_title{ line-height:26px;}
+.mall_change_one{ float:left; height:24px; margin:0 18px 10px 0; padding:0 15px; border:1px solid #fff; line-height:24px; color:#333; text-align:center;}
+.mall_change_one:hover{ color:#e6292f; text-decoration:none;}
+.mall_change_one.active{ position:relative; border-color:#e6292f; color:#e6292f;}
+.mall_change_one.active .icon{ position:absolute; right:0; bottom:0; width:10px; height:10px; background:url(../img/select_arrow.png) no-repeat;}
+.add{ position:relative;}
+.add a{ position:absolute; top:-36px; right:0;}
+.sorting{ cursor:pointer;}
+.img_upload{ display:inline-block; width:153px; height:26px; line-height:26px; font-size:16px; text-align:center;}
+.img_upload .upload{ position:relative; display:inline-block; width:153px; height:26px; overflow:hidden; vertical-align:-8px;}
+.img_upload .upload .file{ position:absolute; top:0px; right:0px; height:36px; border:none; background:none; font-size:400px; opacity:0; filter:alpha(opacity=0); outline:0px; cursor:pointer;}
+.img_upload .img{ display:inline-block; width:153px; height:26px; padding:0 5px; border:1px solid #ccc; border-radius:3px; line-height:24px; background:#eee; font-size:12px; text-align:left;}
+.img_upload .img .src{ float:left; display:inline-block; width:110px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.img_upload .img .del{ display:inline-block; width:30px; text-align:right;}
+.img_upload span{ vertical-align:-1px;}
+
+body {
+  font-family: "Microsoft Yahei";
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  line-height: 1.7;
+}
+.btn-primary{
+	border-color:#3078bf;
+}
+.btn-primary:hover {
+	background: #4898e7;
+	border-color:#4898e7;
+}
+a:hover, a:focus{
+	color:#4898e7;
+}
+.text-success{
+	color:#090;
+}
+.text-danger{
+	color:#c7181e;
+}
+.table{
+	color:#666;
+}
+.table > thead > tr > th {
+	font-weight:normal;
+    border-bottom: 1px solid #ddd;
+}
+.pagination{
+	margin:0;
+}
+.input-sm{
+	height:26px;
+}
+select.input-sm{
+	height:24px;
+	padding:0;
+}
+.form-inline label {
+    width: 100px;
+	font-weight:normal;
+	text-align:right;
+}
+.form-inline select.form-control{
+	width:153px;
+	height:26px;
+}
+.form-inline .form-group{
+	padding:0 0 15px;
+}
+.form-inline .input-group > .form-control{
+	width:130px;
+	height:26px;
+}
+.input-group-sm > .input-group-addon{
+	height:26px;
+	padding:0 5px;
+}
+
+
+
+
+
+
+
+
+
+

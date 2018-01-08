@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="spring.demo.springmvc.business.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="spring.demo.springmvc.business.model.User" >
+    <id column="PKID" property="pkid" jdbcType="DECIMAL" />
+    <result column="USER_ID" property="userId" jdbcType="VARCHAR" />
+    <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+    <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+    <result column="REALM_ID" property="realmId" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="DECIMAL" />
+    <result column="VALID_START" property="validStart" jdbcType="TIMESTAMP" />
+    <result column="VALID_END" property="validEnd" jdbcType="TIMESTAMP" />
+    <result column="VALID" property="valid" jdbcType="CHAR" />
+    <result column="ADDED_BY" property="addedBy" jdbcType="DECIMAL" />
+    <result column="ADDED_NAME" property="addedName" jdbcType="VARCHAR" />
+    <result column="ADDED_TIME" property="addedTime" jdbcType="TIMESTAMP" />
+    <result column="LAST_MODIFIED_BY" property="lastModifiedBy" jdbcType="DECIMAL" />
+    <result column="LAST_MODIFIED_NAME" property="lastModifiedName" jdbcType="VARCHAR" />
+    <result column="LAST_MODIFIED_TIME" property="lastModifiedTime" jdbcType="TIMESTAMP" />
+    <result column="LAST_MODIFIED_IP" property="lastModifiedIp" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PKID, USER_ID, USER_NAME, PASSWORD, REALM_ID, STATUS, VALID_START, VALID_END, VALID, 
+    ADDED_BY, ADDED_NAME, ADDED_TIME, LAST_MODIFIED_BY, LAST_MODIFIED_NAME, LAST_MODIFIED_TIME, 
+    LAST_MODIFIED_IP
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from TUSER
+    where PKID = #{pkid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from TUSER
+    where PKID = #{pkid,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="spring.demo.springmvc.business.model.User" >
+    insert into TUSER (PKID, USER_ID, USER_NAME, 
+      PASSWORD, REALM_ID, STATUS, 
+      VALID_START, VALID_END, VALID, 
+      ADDED_BY, ADDED_NAME, ADDED_TIME, 
+      LAST_MODIFIED_BY, LAST_MODIFIED_NAME, LAST_MODIFIED_TIME, 
+      LAST_MODIFIED_IP)
+    values (#{pkid,jdbcType=DECIMAL}, #{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{realmId,jdbcType=VARCHAR}, #{status,jdbcType=DECIMAL}, 
+      #{validStart,jdbcType=TIMESTAMP}, #{validEnd,jdbcType=TIMESTAMP}, #{valid,jdbcType=CHAR}, 
+      #{addedBy,jdbcType=DECIMAL}, #{addedName,jdbcType=VARCHAR}, #{addedTime,jdbcType=TIMESTAMP}, 
+      #{lastModifiedBy,jdbcType=DECIMAL}, #{lastModifiedName,jdbcType=VARCHAR}, #{lastModifiedTime,jdbcType=TIMESTAMP}, 
+      #{lastModifiedIp,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="spring.demo.springmvc.business.model.User" >
+  	<selectKey keyProperty="pkid" resultType="java.lang.Long" order="BEFORE">
+			SELECT SQ_tuser.Nextval from dual
+	 </selectKey>
+    insert into TUSER
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pkid != null" >
+        PKID,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="userName != null" >
+        USER_NAME,
+      </if>
+      <if test="password != null" >
+        PASSWORD,
+      </if>
+      <if test="realmId != null" >
+        REALM_ID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="validStart != null" >
+        VALID_START,
+      </if>
+      <if test="validEnd != null" >
+        VALID_END,
+      </if>
+      <if test="valid != null" >
+        VALID,
+      </if>
+      <if test="addedBy != null" >
+        ADDED_BY,
+      </if>
+      <if test="addedName != null" >
+        ADDED_NAME,
+      </if>
+        ADDED_TIME,
+      <if test="lastModifiedBy != null" >
+        LAST_MODIFIED_BY,
+      </if>
+      <if test="lastModifiedName != null" >
+        LAST_MODIFIED_NAME,
+      </if>
+      <if test="lastModifiedTime != null" >
+        LAST_MODIFIED_TIME,
+      </if>
+      <if test="lastModifiedIp != null" >
+        LAST_MODIFIED_IP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pkid != null" >
+        #{pkid,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="realmId != null" >
+        #{realmId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="validStart != null" >
+        #{validStart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validEnd != null" >
+        #{validEnd,jdbcType=TIMESTAMP},
+      </if>
+      <if test="valid != null" >
+        #{valid,jdbcType=CHAR},
+      </if>
+      <if test="addedBy != null" >
+        #{addedBy,jdbcType=DECIMAL},
+      </if>
+      <if test="addedName != null" >
+        #{addedName,jdbcType=VARCHAR},
+      </if>
+        sysdate,
+      <if test="lastModifiedBy != null" >
+        #{lastModifiedBy,jdbcType=DECIMAL},
+      </if>
+      <if test="lastModifiedName != null" >
+        #{lastModifiedName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifiedTime != null" >
+        #{lastModifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifiedIp != null" >
+        #{lastModifiedIp,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="spring.demo.springmvc.business.model.User" >
+    update TUSER
+    <set >
+      <if test="userId != null" >
+        USER_ID = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="realmId != null" >
+        REALM_ID = #{realmId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="validStart != null" >
+        VALID_START = #{validStart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validEnd != null" >
+        VALID_END = #{validEnd,jdbcType=TIMESTAMP},
+      </if>
+      <if test="valid != null" >
+        VALID = #{valid,jdbcType=CHAR},
+      </if>
+      <if test="addedBy != null" >
+        ADDED_BY = #{addedBy,jdbcType=DECIMAL},
+      </if>
+      <if test="addedName != null" >
+        ADDED_NAME = #{addedName,jdbcType=VARCHAR},
+      </if>
+      <if test="addedTime != null" >
+        ADDED_TIME = #{addedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifiedBy != null" >
+        LAST_MODIFIED_BY = #{lastModifiedBy,jdbcType=DECIMAL},
+      </if>
+      <if test="lastModifiedName != null" >
+        LAST_MODIFIED_NAME = #{lastModifiedName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifiedTime != null" >
+        LAST_MODIFIED_TIME = #{lastModifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifiedIp != null" >
+        LAST_MODIFIED_IP = #{lastModifiedIp,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PKID = #{pkid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="spring.demo.springmvc.business.model.User" >
+    update TUSER
+    set USER_ID = #{userId,jdbcType=VARCHAR},
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      REALM_ID = #{realmId,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      VALID_START = #{validStart,jdbcType=TIMESTAMP},
+      VALID_END = #{validEnd,jdbcType=TIMESTAMP},
+      VALID = #{valid,jdbcType=CHAR},
+      ADDED_BY = #{addedBy,jdbcType=DECIMAL},
+      ADDED_NAME = #{addedName,jdbcType=VARCHAR},
+      ADDED_TIME = #{addedTime,jdbcType=TIMESTAMP},
+      LAST_MODIFIED_BY = #{lastModifiedBy,jdbcType=DECIMAL},
+      LAST_MODIFIED_NAME = #{lastModifiedName,jdbcType=VARCHAR},
+      LAST_MODIFIED_TIME = #{lastModifiedTime,jdbcType=TIMESTAMP},
+      LAST_MODIFIED_IP = #{lastModifiedIp,jdbcType=VARCHAR}
+    where PKID = #{pkid,jdbcType=DECIMAL}
+  </update>
+  
+  <select id="queryPageCount2" parameterType="java.util.Map" resultType="java.lang.Integer">
+  	select count(1) from TUSER t
+  	where t.valid='T'
+  	<if test="Status != null and Status != '' and Status.length > 0">
+          AND STATUS IN
+          <foreach item="item" index="index" collection="Status" open="(" separator="," close=")">
+              ${item}
+          </foreach>
+     	</if>          
+        <if test="keyword != null and keyword != ''" >
+       		and (t.USER_NAME like '%'||#{keyword,jdbcType=VARCHAR}||'%'
+        	or t.USER_ID like '%'||#{keyword,jdbcType=VARCHAR}||'%'
+        	or t.REALM_ID like '%'||#{keyword,jdbcType=VARCHAR}||'%'        
+        	)
+      </if>
+      <if test="starttime != null and starttime != ''" >
+        AND　TRUNC(t.ADDED_TIME) &gt;= to_date(#{starttime,jdbcType=VARCHAR},'yyyy-MM-dd')
+      </if>
+      <if test="endtime != null  and endtime != ''" >
+        AND　TRUNC(t.ADDED_TIME) &lt;= to_date(#{endtime,jdbcType=VARCHAR},'yyyy-MM-dd')
+      </if>	
+      <if test="addedTimeInterval != null and addedTimeInterval != '' and addedTimeInterval.length > 0" >
+       	  AND
+          <foreach item="item" index="index" collection="addedTimeInterval" open="(" separator="or" close=")">
+			 <if test="item==10">
+				　TRUNC(t.ADDED_TIME) = TRUNC(SYSDATE)
+			 </if>
+			 <if test="item==20">
+				　TRUNC(t.ADDED_TIME) &gt; TRUNC(SYSDATE-7)
+			 </if>
+			 <if test="item==30">
+				　TRUNC(t.ADDED_TIME) &gt; TRUNC(add_months(SYSDATE,-1))
+			 </if>
+          </foreach>
+      </if>
+  </select>
+  <select id="queryPageCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+  	select count(1) from TUSER t
+  	where t.valid='T'
+  	<if test="map.Status != null and map.Status != '' and map.Status.length > 0">
+          AND STATUS IN
+          <foreach item="item" index="index" collection="map.Status" open="(" separator="," close=")">
+              ${item}
+          </foreach>
+     	</if>          
+        <if test="map.keyword != null and map.keyword != ''" >
+       		and (t.USER_NAME like '%'||#{map.keyword,jdbcType=VARCHAR}||'%'
+        	or t.USER_ID like '%'||#{map.keyword,jdbcType=VARCHAR}||'%'
+        	or t.REALM_ID like '%'||#{map.keyword,jdbcType=VARCHAR}||'%'        
+        	)
+      </if>
+      <if test="map.starttime != null and map.starttime != ''" >
+        AND　TRUNC(t.ADDED_TIME) &gt;= to_date(#{map.starttime,jdbcType=VARCHAR},'yyyy-MM-dd')
+      </if>
+      <if test="map.endtime != null  and map.endtime != ''" >
+        AND　TRUNC(t.ADDED_TIME) &lt;= to_date(#{map.endtime,jdbcType=VARCHAR},'yyyy-MM-dd')
+      </if>	
+      <if test="map.addedTimeInterval != null and map.addedTimeInterval != '' and map.addedTimeInterval.length > 0" >
+       	  AND
+          <foreach item="item" index="index" collection="map.addedTimeInterval" open="(" separator="or" close=")">
+			 <if test="item==10">
+				　TRUNC(t.ADDED_TIME) = TRUNC(SYSDATE)
+			 </if>
+			 <if test="item==20">
+				　TRUNC(t.ADDED_TIME) &gt; TRUNC(SYSDATE-7)
+			 </if>
+			 <if test="item==30">
+				　TRUNC(t.ADDED_TIME) &gt; TRUNC(add_months(SYSDATE,-1))
+			 </if>
+          </foreach>
+      </if>
+  </select>
+  
+  
+  <select id="queryList" parameterType="java.util.Map" resultMap="BaseResultMap">
+    select t.USER_NAME,
+    t.PKID,
+    t.USER_ID,
+    t.STATUS,
+    t.VALID_START, 
+    t.VALID_END,    
+    t.ADDED_NAME
+    from TUSER t where t.valid='T'
+     <if test="map.Status != null and map.Status != '' and map.Status.length > 0">
+          AND 
+          t.STATUS IN
+          <foreach item="item" index="index" collection="map.Status" open="(" separator="," close=")">
+              ${item}
+          </foreach>
+     	</if>          
+        <if test="map.keyword != null and map.keyword != ''" >
+       		and (t.USER_NAME like '%'||#{map.keyword,jdbcType=VARCHAR}||'%'
+        	or t.USER_ID like '%'||#{map.keyword,jdbcType=VARCHAR}||'%'
+        	or t.REALM_ID like '%'||#{map.keyword,jdbcType=VARCHAR}||'%'        
+        	)
+      </if>
+      <if test="map.starttime != null and map.starttime != ''" >
+        AND　TRUNC(t.ADDED_TIME) &gt;= to_date(#{map.starttime,jdbcType=VARCHAR},'yyyy-MM-dd')
+      </if>
+      <if test="map.endtime != null  and map.endtime != ''" >
+        AND　TRUNC(t.ADDED_TIME) &lt;= to_date(#{map.endtime,jdbcType=VARCHAR},'yyyy-MM-dd')
+      </if>	
+      <if test="map.addedTimeInterval != null and map.addedTimeInterval != '' and map.addedTimeInterval.length > 0" >
+       	  AND
+          <foreach item="item" index="index" collection="map.addedTimeInterval" open="(" separator="or" close=")">
+			 <if test="item==10">
+				　TRUNC(t.ADDED_TIME) = TRUNC(SYSDATE)
+			 </if>
+			 <if test="item==20">
+				　TRUNC(t.ADDED_TIME) &gt; TRUNC(SYSDATE-7)
+			 </if>
+			 <if test="item==30">
+				　TRUNC(t.ADDED_TIME) &gt; TRUNC(add_months(SYSDATE,-1))
+			 </if>
+          </foreach>
+      </if>
+      order by pkid desc 
+  </select>
+  
+  
+  
+  <select id="queryList2" parameterType="java.util.Map" resultMap="BaseResultMap">
+    select t.USER_NAME,
+    t.PKID,
+    t.USER_ID,
+    t.STATUS,
+    t.VALID_START, 
+    t.VALID_END,    
+    t.ADDED_NAME
+    from TUSER t where t.valid='T'
+     <if test="Status != null and Status != '' and Status.length > 0">
+          AND 
+          t.STATUS IN
+          <foreach item="item" index="index" collection="Status" open="(" separator="," close=")">
+              ${item}
+          </foreach>
+     	</if>          
+        <if test="keyword != null and keyword != ''" >
+       		and (t.USER_NAME like '%'||#{keyword,jdbcType=VARCHAR}||'%'
+        	or t.USER_ID like '%'||#{keyword,jdbcType=VARCHAR}||'%'
+        	or t.REALM_ID like '%'||#{keyword,jdbcType=VARCHAR}||'%'        
+        	)
+      </if>
+      <if test="starttime != null and starttime != ''" >
+        AND　TRUNC(t.ADDED_TIME) &gt;= to_date(#{starttime,jdbcType=VARCHAR},'yyyy-MM-dd')
+      </if>
+      <if test="endtime != null  and endtime != ''" >
+        AND　TRUNC(t.ADDED_TIME) &lt;= to_date(#{endtime,jdbcType=VARCHAR},'yyyy-MM-dd')
+      </if>	
+      <if test="addedTimeInterval != null and addedTimeInterval != '' and addedTimeInterval.length > 0" >
+       	  AND
+          <foreach item="item" index="index" collection="addedTimeInterval" open="(" separator="or" close=")">
+			 <if test="item==10">
+				　TRUNC(t.ADDED_TIME) = TRUNC(SYSDATE)
+			 </if>
+			 <if test="item==20">
+				　TRUNC(t.ADDED_TIME) &gt; TRUNC(SYSDATE-7)
+			 </if>
+			 <if test="item==30">
+				　TRUNC(t.ADDED_TIME) &gt; TRUNC(add_months(SYSDATE,-1))
+			 </if>
+          </foreach>
+      </if>
+      order by pkid desc 
+  </select>
+  
+</mapper>
