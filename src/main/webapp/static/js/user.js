@@ -15,7 +15,7 @@
 					}
 				});
 				
-				$('#addUserForm :input').on('blur',function(){
+				$('#addUserForm :input[name!="pkid"]').on('blur',function(){
 					if($(this).val()==''){
 						$(this).addClass("inputred");
 					}else{
@@ -97,41 +97,11 @@
 					}
 					query();
 				});
-				/*
-				//点击分页链接
-				$("#pagenumber").keyup(
-					function(e) {
-						this.value = this.value.replace(/[^\d]/g, '').replace(
-								/(\d{4})(?=\d)/g, "$1,");
-						
-						if(this.value==''){
-							$(this).val(1);
-						}
-						var totalPage = $("#totalPage").val();
-						if (this.value > totalPage) {
-							this.value = totalPage;
-						}
-						queryCondition(queryUrl);
-					});
-				$("#pagesize").change(function() {
-					queryCondition(queryUrl);
-				});
-				$('ul.pagination a').click(function() {
-					if($(this).parent('li').hasClass('disabled')){
-						return;
-					}   
-					var data = $(this).attr('data');
-					if(data==null){
-						return;
-					}
-					$('#pagenumber').val(data);
-					queryCondition();
-				});
-*/			
+
 
 				function fromValid(){
 					 var num = 0 ;
-					 $('#addUserForm :input').each(function(i){
+					 $('#addUserForm :input[name!="pkid"]').each(function(i){
 						  if($(this).val()==''){
 								$(this).addClass("inputred");
 								num++;

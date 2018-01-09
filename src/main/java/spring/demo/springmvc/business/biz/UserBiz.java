@@ -27,6 +27,7 @@ public class UserBiz implements IUser{
 		user.setUserId(userDto.getUserId());
 		user.setUserName(userDto.getUserName());
 		user.setAddedBy(999999L);
+		user.setAddedName("管理员");
 		String validStart = userDto.getValidStart();
 		String validEnd = userDto.getValidEnd();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -72,6 +73,7 @@ public class UserBiz implements IUser{
 		user.setPkid(userDto.getPkid());
 		user.setUserName(userDto.getUserName());
 		user.setLastModifiedBy(999999L);
+		user.setLastModifiedName("管理员");
 		String validStart = userDto.getValidStart();
 		String validEnd = userDto.getValidEnd();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

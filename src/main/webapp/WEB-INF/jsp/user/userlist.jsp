@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="v" value="1.0" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,19 +10,19 @@
 <title>Demo</title>
   <link rel="stylesheet" type="text/css" href="${bootstrap}/css/bootstrap.css?v=${v}"/>
     <link rel="stylesheet" href="${css}/53b24d91.public.min.css?v=${v}">
-    <link rel="stylesheet" type="text/css" href="${css}/jquery-ui.css?v=${v}"/>
+    <%--<link rel="stylesheet" type="text/css" href="${css}/jquery-ui.css?v=${v}"/>--%>
     <link rel="stylesheet" type="text/css" href="${css}/finance.css?v=${v}"/>
-    <link rel="stylesheet" type="text/css" href="${css}/dataTables/dataTables.bootstrap.css?v=${v}"/>
+    <%--<link rel="stylesheet" type="text/css" href="${css}/dataTables/dataTables.bootstrap.css?v=${v}"/>--%>
     <link rel="stylesheet" type="text/css" href="${bootstrap}/bootstrapvalidator/css/bootstrapValidator.min.css?v=${v}"/>
     <script src="${bootstrap}/js/zquery.js?v=${v}"></script>
-	<script src="${js}/92c94a6b.public.min.js?v=${v}"></script>
+	<%--<script src="${js}/92c94a6b.public.min.js?v=${v}"></script>--%>
 	<script src="${js}/jquery-ui.js?v=${v}"></script>
 	<script src="${js}/layer/layer.js?v=${v}"></script>
     <script src="${js}/layer/extend/layer.ext.js?v=${v}"></script>
     <script src="${js}/dataTables/jquery.dataTables.js?v=${v}"></script>
     <script src="${js}/dataTables/dataTables.bootstrap.js?v=${v}"></script>
     <script src="${js}/dataTables/fnReloadAjax.js?v=${v}"></script>
-    <script src="${js}/tablesorter/tablesorter.js?v=${v}"></script>
+  <%--  <script src="${js}/tablesorter/tablesorter.js?v=${v}"></script>--%>
     <script src="${bootstrap}/js/bootstrap.min.js"></script>
     <script src="${bootstrap}/bootstrapvalidator/js/bootstrapValidator.js"></script>
     <script src="${js}/common.js?v=${v}"></script>
