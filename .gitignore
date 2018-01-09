@@ -1,0 +1,12 @@
+*.jsdtscope
+*.project
+*.classpath
+*.prefs
+*.setting
+*.settings
+*spingbeans
+*target
+generatorConfig
+rebel.xml
+*bin
+*idea
